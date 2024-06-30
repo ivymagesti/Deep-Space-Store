@@ -1,0 +1,66 @@
+.fill-height{
+    background: #243441;
+}
+
+.text-body-2.font-weight-bold.mb-n1{
+    font-size: 25px !important;
+}
+
+.text-my-requests{
+    padding-left: 15px;
+}
+
+.name-purchase{
+    color: #6EED0A;
+}
+
+.value-purchase{
+    color: #FFF;
+}
+
+
+@media (max-width: 800px) {
+    .v-container.v-locale--is-ltr.fill-height{
+    margin: 0px;
+    padding: 0;
+    justify-content: center;
+    display: flex;
+ } 
+
+ .text-center{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    padding-top: 15px;
+ }
+
+ .text-body-2.font-weight-bold.mb-n1{
+    font-size: 31px !important;
+ }
+
+ .text-h2.font-weight-bold{
+    font-size: 38px !important;
+ }
+
+ .v-row{
+    flex-direction: column;
+    padding-left: 15px;
+ }
+
+ .text-my-requests.text-body-3.font-weight-bold.mb-n1{
+    margin-left: 15px;
+    font-size: 22px;
+ }
+
+ .v-col{
+    display: flex;
+ }
+
+ .v-card{
+    display: flex;
+    align-items: center;
+    width: 90%;
+ }
+}
