@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
-import Purchase from '@/views/Purchase.vue';
+import TPurchase from '@/views/TPurchase.vue';
 
 const routes = [
   { path: "/", 
@@ -9,7 +9,7 @@ const routes = [
 
   { path: "/001", 
   name: "Purchase",
-  component: Purchase },
+  component: TPurchase },
 ];
 
 const router = createRouter({

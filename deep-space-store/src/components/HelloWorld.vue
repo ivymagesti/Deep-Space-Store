@@ -26,7 +26,7 @@
               <h2 class="text-h5 font-weight-bold name-purchase">Nome do pedido</h2>
             </template>
             <template v-slot:subtitle>
-              <div class="text-subtitle-1 font-weight-bold value-purchase">Valor do pedido</div>
+              <div class="text-subtitle-1 font-weight-bold details-purchase">Valor do pedido</div>
             </template>
           </v-card>
         </v-col>

@@ -18,4 +18,13 @@ export default defineComponent({
 .v-application{
     background: #243441 !important;
 }
+
+.name-purchase{
+    color: #6EED0A;
+}
+
+.details-purchase{
+    color: #FFF;
+    opacity: 100%;
+}
 </style>

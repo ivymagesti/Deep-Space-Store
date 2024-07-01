@@ -1,21 +1,12 @@
-.fill-height{
-    background: #243441;
+.v-card.v-card--link.v-theme--dark.text-surface-variant.v-card--density-default.rounded-lg.v-card--variant-outlined.py-4{
+    background: #212121;
 }
-
 .text-body-2.font-weight-bold.mb-n1{
     font-size: 25px !important;
 }
 
 .text-my-requests{
     padding-left: 15px;
-}
-
-.name-purchase{
-    color: #6EED0A;
-}
-
-.value-purchase{
-    color: #FFF;
 }
 
 

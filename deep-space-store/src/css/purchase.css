@@ -1,0 +1,99 @@
+.fill-height {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.v-card.v-theme--dark.v-card--density-default.v-card--variant-elevated.mx-auto {
+    width: 85%;
+    max-width: 700px !important;
+}
+
+.v-col.image {
+    max-width: 30%;
+    padding: 5px;
+}
+
+.v-img__img.v-img__img--cover {
+    padding: 20px;
+}
+
+.v-col.description {
+    padding-left: 0;
+}
+
+.line {
+    border: 0.25px solid #6EED0A;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 17px;
+}
+
+.checkout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+}
+
+.v-btn.v-btn--elevated.v-theme--dark.v-btn--density-default.v-btn--size-default.v-btn--variant-elevated.btn-checkout{
+    background: green;
+    text-transform: none;
+}
+
+@media (max-width: 800px) {
+    .v-container.v-locale--is-ltr.fill-height {
+        padding-top: 20px;
+    }
+
+    .v-row {
+        width: 100%;
+    }
+
+    .v-col.image {
+        max-width: 100%;
+        margin-top: 15px;
+        padding: 0;
+    }
+
+    .v-col.description {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .v-card-title.text-h5.name-purchase.font-weight-bold {
+        width: 100%;
+        font-size: 33px !important;
+        display: flex;
+    }
+
+    .description {
+        width: 100%;
+        display: flex;
+        margin-bottom: 10px;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .v-card-subtitle.font-weight-bold.details-purchase {
+        font-size: 22px;
+        opacity: 100%;
+    }
+
+    .line{
+        margin: 0;
+        width: 100%;
+    }
+
+    .v-btn.v-btn--elevated.v-theme--dark.v-btn--density-default.v-btn--size-default.v-btn--variant-elevated.btn-checkout{
+        font-size: 20px;
+        margin: 10px;
+    }
+
+}
