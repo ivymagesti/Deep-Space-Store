@@ -145,6 +145,7 @@ export default {
     },
     finishPayment() {
         window.alert("Pagamento Realizado =)");
+        window.location.href = "https://www.youshop.com.br/";
     },
   },
 };
