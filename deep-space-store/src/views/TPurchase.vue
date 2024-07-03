@@ -12,14 +12,15 @@
 
         <v-col class="description">
           <v-card-title class="text-h5 name-purchase font-weight-bold">
-            Nome do pedido
+            {{ purchaseDetails.name }}
           </v-card-title>
           <div class="description">
             <v-card-subtitle class="font-weight-bold details-purchase">
-              Quantidade de itens</v-card-subtitle
+              Quantidade de itens:
+              {{ purchaseDetails.quantity }}</v-card-subtitle
             >
             <v-card-subtitle class="font-weight-bold details-purchase">
-              Valor do Pedido</v-card-subtitle
+              Valor do Pedido: R${{ purchaseDetails.price }}</v-card-subtitle
             >
           </div>
         </v-col>
@@ -33,8 +34,24 @@
 </template>
 
 <script>
+import { useRoute } from "vue-router";
+import { fetchOrder } from "@/services/fetchers";
+
 export default {
   name: "Purchase",
+
+  data() {
+    return {
+      purchaseDetails: [],
+    };
+  },
+
+  async created() {
+    const route = useRoute();
+    const codes = route.params.code;
+    const data = await fetchOrder(codes);
+    this.purchaseDetails = data;
+  },
 
   methods: {
     goToForm() {

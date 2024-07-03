@@ -1,3 +1,4 @@
+
 .fill-height {
     max-width: 100%;
     padding: 0;
@@ -5,6 +6,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 5%;
+    background: #243441;
 }
 
 .v-card.v-theme--dark.v-card--density-default.v-card--variant-elevated.mx-auto {

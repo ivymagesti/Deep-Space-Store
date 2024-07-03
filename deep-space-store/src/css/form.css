@@ -1,0 +1,22 @@
+.v-col-md-4{
+    flex: 1;
+    max-width: 50%;
+}
+
+@media (max-width: 800px) {
+    .v-col-md-4{
+        max-width: 100%;
+    }
+
+    .v-card-title.text-h5.name-purchase.font-weight-bold{
+        font-size: 28px !important;
+    }
+
+    .v-card.v-theme--dark.v-card--density-default.v-card--variant-elevated.mx-auto{
+        margin-bottom: 20px;
+    }
+
+    .v-selection-control .v-label{
+        font-size: 18px;
+    }
+}
