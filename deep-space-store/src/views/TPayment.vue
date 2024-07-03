@@ -72,7 +72,9 @@
                           hide-details
                         ></v-text-field>
                       </v-col>
-                      <v-btn @click="finishPayment()">Finalizar Pagamento </v-btn>
+                      <v-btn @click="finishPayment()"
+                        >Finalizar Pagamento
+                      </v-btn>
                     </v-row>
                   </v-container>
                 </v-form>
@@ -108,9 +110,6 @@ export default {
     };
   },
   methods: {
-    finishPayment(){
-        window.alert("Pagamento Realizado!");
-    },
     validateCpf() {
       const strCPF = String(this.cpf).replace(/[^\d]/g, "");
       let sum = 0;
@@ -121,7 +120,7 @@ export default {
       if (strCPF == "00000000000") {
         this.cpfErrors.push("CPF inválido.");
         return false;
-    }
+      }
       for (i = 1; i <= 9; i++)
         sum = sum + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
       rest = (sum * 10) % 11;
@@ -130,7 +129,7 @@ export default {
       if (rest != parseInt(strCPF.substring(9, 10))) {
         this.cpfErrors.push("CPF inválido.");
         return false;
-    }
+      }
 
       sum = 0;
       for (i = 1; i <= 10; i++)
@@ -141,8 +140,11 @@ export default {
       if (rest != parseInt(strCPF.substring(10, 11))) {
         this.cpfErrors.push("CPF inválido.");
         return false;
-    }
+      }
       return true;
+    },
+    finishPayment() {
+        window.alert("Pagamento Realizado =)");
     },
   },
 };
