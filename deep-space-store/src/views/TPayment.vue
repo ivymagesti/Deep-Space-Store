@@ -28,10 +28,12 @@
 
               <div v-if="selectedPaymentMethod === 'pix'">
                 <v-img src="../assets/images/qrcode.png" height="200px"></v-img>
+                <v-btn @click="finishPayment()">Finalizar Pagamento </v-btn>
               </div>
 
               <div v-if="selectedPaymentMethod === 'boleto'">
                 <v-img src="../assets/images/boleto.png" height="300px"></v-img>
+                <v-btn @click="finishPayment()">Finalizar Pagamento </v-btn>
               </div>
 
               <div v-if="selectedPaymentMethod === 'card'">
@@ -70,6 +72,7 @@
                           hide-details
                         ></v-text-field>
                       </v-col>
+                      <v-btn @click="finishPayment()">Finalizar Pagamento </v-btn>
                     </v-row>
                   </v-container>
                 </v-form>
@@ -105,6 +108,9 @@ export default {
     };
   },
   methods: {
+    finishPayment(){
+        window.alert("Pagamento Realizado!");
+    },
     validateCpf() {
       const strCPF = String(this.cpf).replace(/[^\d]/g, "");
       let sum = 0;
