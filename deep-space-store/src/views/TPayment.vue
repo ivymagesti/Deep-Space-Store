@@ -12,7 +12,12 @@
             rounded="lg"
             variant="outlined"
           >
-            <v-text-field v-model="cpf" label="CPF"> </v-text-field>
+            <v-text-field
+              v-model="cpf"
+              label="CPF"
+              @blur="validateCpf"
+              :error-messages="cpfErrors"
+            ></v-text-field>
             <v-container>
               <v-radio-group v-model="selectedPaymentMethod">
                 <v-radio label="Pix" value="pix"></v-radio>
@@ -53,6 +58,7 @@
                           hide-details
                         ></v-text-field>
                       </v-col>
+
                       <v-col cols="12" md="4">
                         <v-text-field
                           v-model="formCard.cardValidate"
@@ -78,11 +84,11 @@
 <script>
 export default {
   name: "Payment",
-
   data() {
     return {
       selectedPaymentMethod: "",
       cpf: "",
+      cpfErrors: [],
       formCard: {
         cardNumber: "",
         cardCvv: "",
@@ -91,20 +97,18 @@ export default {
       rules: {
         required: (value) => !!value || "Required.",
         number: (value) => {
-          const pattern = /^\d{11}$/;
+          const pattern = /^\d+$/;
           return pattern.test(value) || "Only numbers";
         },
       },
     };
   },
-
   methods: {
-    validateCpf($this.cpf){
-    function(inputCPF) {
-      let strCPF = String(inputCPF).replace(/[^\d]/g, "");
+    validateCpf() {
+      const strCPF = String(this.cpf).replace(/[^\d]/g, "");
       let sum = 0;
-      let i;
       let rest;
+      let i;
 
       if (strCPF == "00000000000") return false;
       for (i = 1; i <= 9; i++)
@@ -123,7 +127,6 @@ export default {
       if (rest != parseInt(strCPF.substring(10, 11))) return false;
       return true;
     },
-}
   },
 };
 </script>
