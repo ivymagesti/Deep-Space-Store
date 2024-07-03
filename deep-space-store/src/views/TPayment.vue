@@ -15,9 +15,10 @@
             <v-text-field
               v-model="cpf"
               label="CPF"
-              @blur="validateCpf"
               :error-messages="cpfErrors"
             ></v-text-field>
+            <v-btn @click="validateCpf()"> Validar CPF </v-btn>
+
             <v-container>
               <v-radio-group v-model="selectedPaymentMethod">
                 <v-radio label="Pix" value="pix"></v-radio>
@@ -109,14 +110,21 @@ export default {
       let sum = 0;
       let rest;
       let i;
+      this.cpfErrors = [];
 
-      if (strCPF == "00000000000") return false;
+      if (strCPF == "00000000000") {
+        this.cpfErrors.push("CPF inválido.");
+        return false;
+    }
       for (i = 1; i <= 9; i++)
         sum = sum + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
       rest = (sum * 10) % 11;
 
       if (rest == 10 || rest == 11) rest = 0;
-      if (rest != parseInt(strCPF.substring(9, 10))) return false;
+      if (rest != parseInt(strCPF.substring(9, 10))) {
+        this.cpfErrors.push("CPF inválido.");
+        return false;
+    }
 
       sum = 0;
       for (i = 1; i <= 10; i++)
@@ -124,7 +132,10 @@ export default {
       rest = (sum * 10) % 11;
 
       if (rest == 10 || rest == 11) rest = 0;
-      if (rest != parseInt(strCPF.substring(10, 11))) return false;
+      if (rest != parseInt(strCPF.substring(10, 11))) {
+        this.cpfErrors.push("CPF inválido.");
+        return false;
+    }
       return true;
     },
   },

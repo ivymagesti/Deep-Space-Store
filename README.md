@@ -14,4 +14,7 @@ Para que a aplicação funcione é necessário inicializá-la
 
 npm run dev
 
+# Tecnologias 
+
+Para o desenvolvimento desta aplicação foi utilizado Vuetify para a estrutura, MWS para simulação da API, Vue Router para a criação das rotas, axios para rotas dinâmicas, API ViaCep para a requisição de endereço, Git/Github para versionamento e Visual Studio Code para o desenvolvimento. 
 
