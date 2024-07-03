@@ -79,7 +79,7 @@
             </v-col>
             <v-col cols="12" md="4">
               <v-text-field
-                v-model="formData.address"
+                v-model="formData.address.number"
                 :rules="[rules.required]"
                 label="Número"
                 hide-details
@@ -126,9 +126,9 @@ export default {
         phone: "",
         cep: "",
         address: {
-          street: '',
-          number: '',
-          complement: '',
+          street: "",
+          number: "",
+          complement: "",
         },
       },
       rules: {
@@ -194,6 +194,8 @@ export default {
         .catch((error) => {
           console.error("Error:", error);
         });
+
+        this.$router.push("/payment");
     },
   },
 };
